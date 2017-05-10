@@ -1,0 +1,112 @@
+# Welcome to Jekyll!
+
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+encoding:"utf-8"
+locale:"en"
+title:"Jermx Web development"
+favicon:"/assets/images/jerm.png"
+#avatar:"/assets/images/jerm.png"
+baseurl: "/jermx" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+
+# Build settings
+markdown: kramdown
+theme: sparrow-jekyll-theme
+gems:
+  - jekyll-
+  - jekyll-paginate
+  - jekyll-feed
+
+# mimic GitHub Pages with --safe
+whitelist:
+  - jekyll-paginate
+  - jekyll-feed
+
+#Social sharing 
+twitter_username: jermz_09
+github_username:  jerm09
+
+# Analytics
+analytics:
+  google:
+    tracking_id: # add your google tracking id here
+
+# Reading Files
+include:
+  - _pages
+
+# Files excluded from Jekyll builds
+exclude:
+- README.md
+- LICENSE
+- Gemfile
+- Gemfile.lock
+
+# Conversion
+highlighter: rouge
+lsi: false
+excerpt_separator: "\n\n"
+incremental: false
+
+# Markdown Processing
+kramdown:
+  input: GFM
+  hard_wrap: false
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+enable_coderay: false
+
+# Sass/SCSS
+  sass:
+  sass_dir: _sass
+  style: compressed # http://sass-lang.com/documentation/file.SASS_REFERENCE.html#output_style
+
+# Outputting
+permalink: /blog/:title/
+paginate: 5 # amount of posts to show
+paginate_path: "/blog/page:num/"
+timezone: # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+
+collections:
+  poetry:
+    output: true
+    permalink: /:collection/:title/
+
+# Front matter defaults
+defaults:
+  # _pages
+  - scope:
+      path: ""
+      type: pages
+    values:
+      layout: page
+      comments: false
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+      comments: true
+      share: true
+  # _porfolio
+  - scope:
+      path: ""
+      type: portfolio
+    values:
+      layout: post
+      share: false
